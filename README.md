@@ -55,12 +55,24 @@ In a filesystem tree:
 `cd`: is used to **C**hange the current working **D**irectory in a Unix, Unix-like, or Windows command prompt environment. It allows you to navigate and switch between different directories within the file system. E.g., `cd Music`<br>
 `cd ..`: is used to navigate to the parent directory (also known as the "parent folder" or "up one level") in a file system using a command-line interface. It is a common command used in terminal or command prompt environments to move from a current directory to the directory that contains it.<br>
 `cd /`: changes the current working directory to the root directory of the file system.<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+`cd+Enter`: Typing `cd` followed by the `Enter` key alone without specifying a directory or path is a way to quickly return to your home directory in which you started your terminal.<br>
+`cd .`: is used to change the current directory to the current directory itself. In other words, it doesn't actually change the directory; it remains in the same directory.<br>
+`mv`: move! After using `mv`, the original file or directory is no longer present at the source location.
+*  It is used to move files or directories from one location to another, essentially changing their location in the file system: `mv file.txt /path/to/new/location/`
+* t can also be used to rename files or directories by specifying a new name during the move: `mv oldname.txt newname.txt`
+
+`cp`: copy! Unlike `mv`, the original file or directory remains intact at the source location.
+* It is used to copy files or directories from one location to another, creating a duplicate of the original file or directory at the destination: `cp file.txt /path/to/destination/`
+* It can be used to copy a single file, multiple files, or entire directories: `cp -r source/* destination/` in which `-r` means recursively copy (or move) directories and their contents.
+
+`mkdir`: is used to create new directories (also known as folders) within the file system. E.g., `mkdir directory_name`. Please note that this directory used relative path. We can use absolute path as well: `mkdir /users/Abed/new_direcotry`<br>
+`rmdir`: is used to remove (delete) **_empty_** directories from the file system. It stands for "remove directory." Unlike the `rm` command, which is used to remove files and directories, `rmdir` is specifically designed to remove only directories that are empty. E.g., `rmdir empty_direcotry`. To remove a directory and all of its contents, we can use `rm -r directory_name`
+## Globbing
+is a feature of Unix and Unix-like shells that allows you to use special characters called wildcards to match and manipulate filenames and paths. These wildcards enable you to perform various operations on files and directories that match a specified pattern. For instance:
+* `ls *html` returns: `app.html` and `index.html`
+* `ls app*` returns: `app.html`, `app.css`, `app.js`
+* `ls *s` returns: `app.css` and `app.js`
+* `ls *pp*` returns: `app.html`, `app.css`, `app.js`
+* `ls app.{html,css}` returns: `app.html`, `app.css`
+* `ls bea?.png` returns `bean.png` and `bear.png`
+* `ls *.{jpg,JPG}`
