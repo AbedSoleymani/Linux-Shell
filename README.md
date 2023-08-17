@@ -77,6 +77,54 @@ sudo useradd newuser  # Create a new user
 ```
 When you use `sudo`, you are temporarily gaining higher access rights to perform actions that would normally require administrator permissions. This helps enhance the security of the system by restricting regular users from making potentially harmful changes.<br>
 
+### 1. File and Directory Operations
+The filesystem tree, also known as the directory tree or directory structure, is a hierarchical organization of files and directories (folders) on a computer's storage system. It represents how files and directories are organized and stored within an operating system.
+
+In a filesystem tree:
+
+* **Root Directory:** At the top level is the root directory, often represented by a forward slash ("/") in Unix-like systems (Linux, macOS) or a drive letter (e.g., "C:") in Windows. The root directory contains all other directories and files.
+* **Directories (Folders):** Directories, also known as folders, are containers that hold files and other directories. They can be nested within each other to create a hierarchical structure.
+* **Files:** Files are individual units of data that contain content. They are organized within directories based on the needs and organization of the system and its users.
+* **Path:** The path is a sequence of directory names separated by slashes ("/" in Unix-like systems) that specifies the location of a file or directory within the filesystem tree. An absolute path starts from the root directory, while a relative path starts from the current working directory.
+
+`ls`: displays the names of files and directories within the current working directory. `ls -a` prints out all files in the direcotry including hidden files (directories that have names starting with a dot `.`)<br><br>
+`pwd`: stands for "print working directory". When you run the pwd command in a terminal or command prompt, it displays the current directory or the path of the directory you are currently located in. An example output is: `/users/Abed`<br><br>
+`cd`: is used to **C**hange the current working **D**irectory in a Unix, Unix-like, or Windows command prompt environment. It allows you to navigate and switch between different directories within the file system. E.g., `cd Music`<br><br>
+`cd ..`: is used to navigate to the parent directory (also known as the "parent folder" or "up one level") in a file system using a command-line interface. It is a common command used in terminal or command prompt environments to move from a current directory to the directory that contains it.<br><br>
+`cd /`: changes the current working directory to the root directory of the file system.<br><br>
+`cd+Enter`: Typing `cd` followed by the `Enter` key alone without specifying a directory or path is a way to quickly return to your home directory in which you started your terminal.<br><br>
+`cd .`: is used to change the current directory to the current directory itself. In other words, it doesn't actually change the directory; it remains in the same directory.<br><br>
+`mv`: move! After using `mv`, the original file or directory is no longer present at the source location.
+*  It is used to move files or directories from one location to another, essentially changing their location in the file system: `mv file.txt /path/to/new/location/`
+* t can also be used to rename files or directories by specifying a new name during the move: `mv oldname.txt newname.txt`
+
+`cp`: copy! Unlike `mv`, the original file or directory remains intact at the source location.
+* It is used to copy files or directories from one location to another, creating a duplicate of the original file or directory at the destination: `cp file.txt /path/to/destination/`
+* It can be used to copy a single file, multiple files, or entire directories: `cp -r source/* destination/` in which `-r` means recursively copy (or move) directories and their contents.
+
+`mkdir`: is used to create new directories (also known as folders) within the file system. E.g., `mkdir directory_name`. Please note that this directory used relative path. We can use absolute path as well: `mkdir /users/Abed/new_direcotry`<br><br>
+`rmdir`: is used to remove (delete) **_empty_** directories from the file system. It stands for "remove directory." Unlike the `rm` command, which is used to remove files and directories, `rmdir` is specifically designed to remove only directories that are empty. E.g., `rmdir empty_direcotry`. To remove a directory and all of its contents, we can use `rm -r directory_name`
+
+### 2. Text Editing and Viewing
+`cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br><br>
+`head -n 20 file.txt` will display the first 20 lines of the file `file.txt`<br><br>
+`tail` command displays the last few lines of a text file. By default, it shows the last 10 lines, but you can specify a different number of lines using the `-n` option. Additionally, you can use the `-f` option to continuously monitor a file and display new lines as they are added (useful for log files: `tail -f logfile.log`).<br><br>
+`less`: Both `cat` and `less` are commands used in Unix-like operating systems to view the contents of text files in the terminal. However, they have different functionalities and use cases. `less` is a more advanced command that allows you to view and navigate through the contents of a file in a pager-like manner. It is particularly useful for viewing large files. `less` displays the content of the file one screen at a time, allowing you to scroll up and down, search, and navigate within the file. Example: `less large_file.txt`
+It provides various keyboard shortcuts for navigation and interaction, such as arrow keys, page up, page down, searching, and quitting.<br><br>
+`unzip`: allows you to decompress and restore the original files and directory structure that were compressed into the archive.<br><br>
+`wc`: stands for "word count", but it provides more than just word counting. It is a simple yet versatile tool for basic text analysis including number of lines, words, and bytes.<br><br>
+`grep`: is used to search for specified patterns or text strings within files or the output of other commands. It stands for "Global Regular Expression Print," and it is commonly used for text processing and pattern matching. Example: `grep "error" log.txt`<br><br>
+`diff`: is used to compare the content of two text files or directories and display the differences between them. It is commonly used to identify changes made to files, configurations, or code over time. The output of the diff command highlights the lines or sections that differ between the files being compared. For example `diff file1.txt file1_draft.txt`<br><br>
+`man`: is used to display the manual pages (also known as "man pages") for other commands, programs, and system functions. Man pages provide detailed documentation and information about how to use various commands and utilities available in the operating system. For example: `man ls`<br><br>
+`nano`: is a simple and user-friendly text editor that is commonly used in Unix and Unix-like operating systems, including Linux. It provides a command-line interface for editing text files directly from the terminal. `nano` is particularly popular among users who are new to the command line and want a straightforward and intuitive text editor. E.g., `nano file_name`<br><br>
+`echo`: is used to display text or output to the terminal or command-line interface. When you use the echo command, the specified text or variables are printed to the screen. It is often used for displaying messages, variable values, or generating simple output. E.g., `echo "Hello, world!"` or:<br>
+`name="John"`<br>
+`echo "My name is $name."`<br><br>
+`vim`<br><br>
+`awk`<br><br>
+`sed`<br><br>
+
+### 3. File Permissions and Ownership
 `chmod`: is a command that is used to change the permissions of files and directories. It stands for "change mode." File permissions determine who can _read_, _write_, or _execute_ a file, and chmod allows you to modify these permissions to control access to files and ensure security.
 ```
 chmod options permissions filename
@@ -103,51 +151,52 @@ chmod +x program.py  # Add execute permission for everyone
 chmod o-w file.txt   # Remove write permission for others
 ```
 
-`ls`: displays the names of files and directories within the current working directory. `ls -a` prints out all files in the direcotry including hidden files (directories that have names starting with a dot `.`)<br><br>
-`cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br>
-`head -n 20 file.txt` will display the first 20 lines of the file `file.txt`<br>
-`tail` command displays the last few lines of a text file. By default, it shows the last 10 lines, but you can specify a different number of lines using the `-n` option. Additionally, you can use the `-f` option to continuously monitor a file and display new lines as they are added (useful for log files: `tail -f logfile.log`).<br>
-`less`: Both `cat` and `less` are commands used in Unix-like operating systems to view the contents of text files in the terminal. However, they have different functionalities and use cases. `less` is a more advanced command that allows you to view and navigate through the contents of a file in a pager-like manner. It is particularly useful for viewing large files. `less` displays the content of the file one screen at a time, allowing you to scroll up and down, search, and navigate within the file. Example: `less large_file.txt`
-It provides various keyboard shortcuts for navigation and interaction, such as arrow keys, page up, page down, searching, and quitting.<br><br>
-`unzip`: allows you to decompress and restore the original files and directory structure that were compressed into the archive.<br><br>
-`wc`: stands for "word count", but it provides more than just word counting. It is a simple yet versatile tool for basic text analysis including number of lines, words, and bytes.<br><br>
-`grep`: is used to search for specified patterns or text strings within files or the output of other commands. It stands for "Global Regular Expression Print," and it is commonly used for text processing and pattern matching. Example: `grep "error" log.txt`<br><br>
-`diff`: is used to compare the content of two text files or directories and display the differences between them. It is commonly used to identify changes made to files, configurations, or code over time. The output of the diff command highlights the lines or sections that differ between the files being compared. For example `diff file1.txt file1_draft.txt`<br><br>
-`man`: is used to display the manual pages (also known as "man pages") for other commands, programs, and system functions. Man pages provide detailed documentation and information about how to use various commands and utilities available in the operating system. For example: `man ls`<br><br>
-`nano`: is a simple and user-friendly text editor that is commonly used in Unix and Unix-like operating systems, including Linux. It provides a command-line interface for editing text files directly from the terminal. `nano` is particularly popular among users who are new to the command line and want a straightforward and intuitive text editor. E.g., `nano file_name`<br><br>
-`echo`: is used to display text or output to the terminal or command-line interface. When you use the echo command, the specified text or variables are printed to the screen. It is often used for displaying messages, variable values, or generating simple output. E.g., `echo "Hello, world!"` or:<br>
-`name="John"`<br>
-`echo "My name is $name."`<br><br>
-`curl`: allows you to transfer data to or from a network server using various protocols. It stands for "**Client URL**" and is used primarily to perform HTTP requests, although it supports several other network protocols as well. For instance<br><br>
-`curl -O https://example.com/file.zip`<br>
-downloads the file `file.zip` from `https://example.com` and saves it in the current directory.
+`chown`<br><br>
+`chgrp`<br><br>
+`umask`<br><br>
 
-## Filesystem Tree
-The filesystem tree, also known as the directory tree or directory structure, is a hierarchical organization of files and directories (folders) on a computer's storage system. It represents how files and directories are organized and stored within an operating system.
+### 4. Package Management
+`apt` (Debian/Ubuntu), `yum` (Red Hat/Fedora): Package managers for installing software<br><br>
+`pip`, `conda`: Package managers for Python libraries<br><br>
 
-In a filesystem tree:
+### 5. Process Management
+`ps`: List processes<br><br>
+`top`, `htop`: Monitor system processes<br><br>
+`kill`, `pkill`: Terminate processes<br><br>
+`bg`, `fg`, `jobs`: Manage background and foreground jobs<br><br>
 
-* **Root Directory:** At the top level is the root directory, often represented by a forward slash ("/") in Unix-like systems (Linux, macOS) or a drive letter (e.g., "C:") in Windows. The root directory contains all other directories and files.
-* **Directories (Folders):** Directories, also known as folders, are containers that hold files and other directories. They can be nested within each other to create a hierarchical structure.
-* **Files:** Files are individual units of data that contain content. They are organized within directories based on the needs and organization of the system and its users.
-* **Path:** The path is a sequence of directory names separated by slashes ("/" in Unix-like systems) that specifies the location of a file or directory within the filesystem tree. An absolute path starts from the root directory, while a relative path starts from the current working directory.
+### 6. System Information and Monitoring
+`df`, `du`: Disk space usage<br><br>
+`free`: Memory usage<br><br>
+`uptime`: System uptime<br><br>
+`htop`, `top`: Real-time system monitoring<br><br>
 
-`pwd`: stands for "print working directory". When you run the pwd command in a terminal or command prompt, it displays the current directory or the path of the directory you are currently located in. An example output is: `/users/Abed`<br><br>
-`cd`: is used to **C**hange the current working **D**irectory in a Unix, Unix-like, or Windows command prompt environment. It allows you to navigate and switch between different directories within the file system. E.g., `cd Music`<br><br>
-`cd ..`: is used to navigate to the parent directory (also known as the "parent folder" or "up one level") in a file system using a command-line interface. It is a common command used in terminal or command prompt environments to move from a current directory to the directory that contains it.<br><br>
-`cd /`: changes the current working directory to the root directory of the file system.<br><br>
-`cd+Enter`: Typing `cd` followed by the `Enter` key alone without specifying a directory or path is a way to quickly return to your home directory in which you started your terminal.<br><br>
-`cd .`: is used to change the current directory to the current directory itself. In other words, it doesn't actually change the directory; it remains in the same directory.<br><br>
-`mv`: move! After using `mv`, the original file or directory is no longer present at the source location.
-*  It is used to move files or directories from one location to another, essentially changing their location in the file system: `mv file.txt /path/to/new/location/`
-* t can also be used to rename files or directories by specifying a new name during the move: `mv oldname.txt newname.txt`
+### 7. Virtual Environments
+`virtualenv`: Create isolated Python environments<br><br>
+`conda`: Manage conda environments<br><br>
 
-`cp`: copy! Unlike `mv`, the original file or directory remains intact at the source location.
-* It is used to copy files or directories from one location to another, creating a duplicate of the original file or directory at the destination: `cp file.txt /path/to/destination/`
-* It can be used to copy a single file, multiple files, or entire directories: `cp -r source/* destination/` in which `-r` means recursively copy (or move) directories and their contents.
+### 8. Networking and Connectivity
+`curl`: allows you to transfer data to or from a network server using various protocols. It stands for "**Client URL**" and is used primarily to perform HTTP requests, although it supports several other network protocols as well. For instance<br>
+```curl -O https://example.com/file.zip```<br>
+downloads the file `file.zip` from `https://example.com` and saves it in the current directory.<br><br>
+`ping`: Check network connectivity<br><br>
+`ifconfig`, `ip`: Network configuration<br><br>
+`ssh`: Securely access remote servers<br><br>
+`scp`: Copy files between local and remote machines<br><br>
 
-`mkdir`: is used to create new directories (also known as folders) within the file system. E.g., `mkdir directory_name`. Please note that this directory used relative path. We can use absolute path as well: `mkdir /users/Abed/new_direcotry`<br><br>
-`rmdir`: is used to remove (delete) **_empty_** directories from the file system. It stands for "remove directory." Unlike the `rm` command, which is used to remove files and directories, `rmdir` is specifically designed to remove only directories that are empty. E.g., `rmdir empty_direcotry`. To remove a directory and all of its contents, we can use `rm -r directory_name`
+### 9. File Compression and Archiving
+`tar`: Create and extract tar archives<br><br>
+`gzip`, `bzip2`: Compress files<br><br>
+
+### 10. AI-Specific Commands
+`nvidia-smi`: Monitor NVIDIA GPU usage<br><br>
+`tensorboard`: Launch TensorBoard for visualization<br><br>
+`jupyter-notebook`: Start Jupyter Notebook<br><br>
+
+### 11. Containerization
+`docker`: Manage containers<br><br>
+`docker-compose`: Manage multi-container applications<br><br>
+
 ## Globbing
 is a feature of Unix and Unix-like shells that allows you to use special characters called wildcards to match and manipulate filenames and paths. These wildcards enable you to perform various operations on files and directories that match a specified pattern. For instance:
 * `ls *html` returns: `app.html` and `index.html`
