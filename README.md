@@ -69,7 +69,9 @@ Type `exit`: For some interactive programs, typing the word `exit` and pressing 
 
 ## Popular commands
 `ls`: displays the names of files and directories within the current working directory. `ls -a` prints out all files in the direcotry including hidden files (directories that have names starting with a dot `.`)<br><br>
-`cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br><br>
+`cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br>
+`head -n 20 file.txt` will display the first 20 lines of the file `file.txt`<br>
+`tail` command displays the last few lines of a text file. By default, it shows the last 10 lines, but you can specify a different number of lines using the `-n` option. Additionally, you can use the `-f` option to continuously monitor a file and display new lines as they are added (useful for log files: `tail -f logfile.log`).<br>
 `less`: Both `cat` and `less` are commands used in Unix-like operating systems to view the contents of text files in the terminal. However, they have different functionalities and use cases. `less` is a more advanced command that allows you to view and navigate through the contents of a file in a pager-like manner. It is particularly useful for viewing large files. `less` displays the content of the file one screen at a time, allowing you to scroll up and down, search, and navigate within the file. Example: `less large_file.txt`
 It provides various keyboard shortcuts for navigation and interaction, such as arrow keys, page up, page down, searching, and quitting.<br><br>
 `unzip`: allows you to decompress and restore the original files and directory structure that were compressed into the archive.<br><br>
