@@ -68,6 +68,41 @@ However, Python functions are part of a Python script or program. They execute w
 Type `exit`: For some interactive programs, typing the word `exit` and pressing Enter will close the program and return you to the shell prompt. This works for commands like `python` (Python interpreter) and `irb` (Ruby interpreter).
 
 ## Popular commands
+
+`sudo`: stands for "superuser do," is a command used in Unix-like operating systems, including Linux, to execute commands with elevated privileges. It allows authorized users to perform administrative tasks and run commands as the superuser (root) or another user with administrative privileges.
+```
+sudo apt update  # Update package information
+sudo systemctl restart apache2  # Restart the Apache web server
+sudo useradd newuser  # Create a new user
+```
+When you use `sudo`, you are temporarily gaining higher access rights to perform actions that would normally require administrator permissions. This helps enhance the security of the system by restricting regular users from making potentially harmful changes.<br>
+
+`chmod`: is a command that is used to change the permissions of files and directories. It stands for "change mode." File permissions determine who can _read_, _write_, or _execute_ a file, and chmod allows you to modify these permissions to control access to files and ensure security.
+```
+chmod options permissions filename
+```
+Here, **options** can include various flags to specify how the permissions should be changed, **permissions** is a _three-digit number_ representing the new permissions, and filename is the name of the file or directory you want to modify.
+<br>
+The permissions parameter is composed of three digits:
+<br>
+* The first digit represents the owner's permissions.
+* The second digit represents the group's permissions.
+* The third digit represents others' (everyone else's) permissions.
+
+Each digit is a combination of three permissions:
+* r: Read permission (4)
+* w: Write permission (2)
+* x: Execute permission (1)
+
+You can add these values to specify the desired permissions. For example, to give the owner read and write permissions (4+2=6) and only read permissions to the group and others (4), you would set the permissions to 644.
+<br>
+Other examples:
+```
+chmod 755 script.sh   # Owner: rwx, Group: rx, Others: rx
+chmod +x program.py  # Add execute permission for everyone
+chmod o-w file.txt   # Remove write permission for others
+```
+
 `ls`: displays the names of files and directories within the current working directory. `ls -a` prints out all files in the direcotry including hidden files (directories that have names starting with a dot `.`)<br><br>
 `cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br>
 `head -n 20 file.txt` will display the first 20 lines of the file `file.txt`<br>
