@@ -20,7 +20,7 @@ A Linux distribution is a complete operating system that includes the Linux kern
 3. **Boot Loader:**
 The boot loader is a program that manages the boot process of the operating system. It resides in the computer's master boot record (MBR) and is responsible for loading the operating system kernel into memory from storage. Popular Linux boot loaders include GRUB (GRand Unified Bootloader) and LILO (Linux Loader).
 4. **Service:**
-In the context of Linux, a service refers to a background process or program that performs specific tasks, such as networking, file sharing, or system management. Services can be started, stopped, and managed to ensure the proper functioning of the system.
+In the context of Linux, a service refers to a background process or program that performs specific tasks, such as networking, file sharing, or system management. Services can be started, stopped, and managed to ensure the proper functioning of the system. Example: httpd, nfsd, ntpd, ftpd and named.
 5. **Filesystem:**
 The filesystem is a method used to organize and store files on a storage device, such as a hard drive or SSD. It determines how files are named, organized, accessed, and stored on the storage medium. Common Linux filesystems include ext4, XFS, and Btrfs.
 6. **Window System:**
