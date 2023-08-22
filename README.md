@@ -120,9 +120,22 @@ It provides various keyboard shortcuts for navigation and interaction, such as a
 `echo`: is used to display text or output to the terminal or command-line interface. When you use the echo command, the specified text or variables are printed to the screen. It is often used for displaying messages, variable values, or generating simple output. E.g., `echo "Hello, world!"` or:<br>
 `name="John"`<br>
 `echo "My name is $name."`<br><br>
-`vim`<br><br>
-`awk`<br><br>
-`sed`<br><br>
+`vim`: (short for "Vi IMproved") is a highly configurable and powerful text editor that comes pre-installed on many Linux distributions. It's an improved version of the traditional Unix text editor called "vi." Vim offers a wide range of features for editing and manipulating text files directly from the command line. It operates in different modes, including normal mode for navigation and editing, insert mode for typing text, and visual mode for selecting text.
+```
+vim text_file.txt
+```
+<br><br>
+`awk`: is a versatile text processing tool in Linux and Unix-like operating systems. It is primarily used for pattern scanning and text manipulation. awk reads input line by line, applies a set of user-defined rules or patterns to each line, and performs actions based on those patterns.
+```
+awk '{print $1, $3}' file.txt  # Print the first and third columns
+awk '{sum += $2} END {print "Average:", sum/NR}' data.txt # Calculate the average of a specific column
+awk '$3 > 50 {print $1, $3}' scores.txt  # Print names and scores where score > 50
+awk '{gsub("old", "new"); print}' input.txt  # Replace "old" with "new" in the file
+awk '{sum += $4} END {print "Total:", sum}' sales.csv # sum up values from 4th column
+awk -F',' '{print $2}' data.csv  # Use comma as delimiter
+awk '/pattern/ {print}' textfile.txt  # Print lines that contain "pattern"
+```
+<br><br>
 
 ### 3. File Permissions and Ownership
 `chmod`: is a command that is used to change the permissions of files and directories. It stands for "change mode." File permissions determine who can _read_, _write_, or _execute_ a file, and chmod allows you to modify these permissions to control access to files and ensure security.
