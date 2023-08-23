@@ -164,7 +164,22 @@ chmod +x program.py  # Add execute permission for everyone
 chmod o-w file.txt   # Remove write permission for others
 ```
 
-`chown`<br><br>
+`chown`: is used to change the ownership of files or directories. Ownership includes both the user and group that have permission to access and modify the file or directory.
+```
+# Change ownership of 'file.txt' to user 'john' and group 'users'
+sudo chown john:users file.txt
+
+# Recursively change ownership of '/var/www/html' directory and
+# its contents to user 'alice' and group 'developers'
+sudo chown -R alice:developers /var/www/html
+
+# Change group ownership of 'file.txt' to group 'staff'
+sudo chown :staff file.txt
+
+# Change ownership of 'file.txt' to user and group with numeric IDs 1000
+sudo chown 1000:1000 file.txt
+```
+<br><br>
 `chgrp`<br><br>
 `umask`<br><br>
 
