@@ -180,7 +180,12 @@ sudo chown :staff file.txt
 sudo chown 1000:1000 file.txt
 ```
 <br><br>
-`chgrp`<br><br>
+`chgrp`:  is used to change the group ownership of files and directories. It allows you to modify the group associated with a file or directory.
+```
+chgrp newgroup file1.txt file2.txt
+chgrp -R newgroup mydir/
+```
+<br><br>
 `umask`<br><br>
 
 ### 4. Package Management
