@@ -186,23 +186,28 @@ chgrp newgroup file1.txt file2.txt
 chgrp -R newgroup mydir/
 ```
 <br><br>
-`umask`<br><br>
+`umask`: is a permission mask that determines the default permissions for newly created files and directories. It specifies which permissions should be disabled when a new file or directory is created. The umask value is subtracted from the default permission set, resulting in the actual permissions assigned to the newly created file or directory.
+The umask value consists of three octal digits (0-7), where each digit represents the permissions that are masked for the owner, group, and others respectively.<br><br>
 
 ### 4. Package Management
-`apt` (Debian/Ubuntu), `yum` (Red Hat/Fedora): Package managers for installing software<br><br>
+`apt`: Package managers for installing software
+```
+sudo apt install package-name
+sudo apt remove package-name
+```
+<br><br>
 `pip`, `conda`: Package managers for Python libraries<br><br>
 
 ### 5. Process Management
 `ps`: List processes<br><br>
-`top`, `htop`: Monitor system processes<br><br>
+`top`, `htop`: Real-time monitoring the system's processes<br><br>
 `kill`, `pkill`: Terminate processes<br><br>
 `bg`, `fg`, `jobs`: Manage background and foreground jobs<br><br>
 
 ### 6. System Information and Monitoring
 `df`, `du`: Disk space usage<br><br>
 `free`: Memory usage<br><br>
-`uptime`: System uptime<br><br>
-`htop`, `top`: Real-time system monitoring<br><br>
+`uptime`: System uptime: displays how long the system has been running, as well as the current system load averages<br><br>
 
 ### 7. Virtual Environments
 `virtualenv`: Create isolated Python environments<br><br>
