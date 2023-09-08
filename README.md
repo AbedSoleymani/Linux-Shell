@@ -103,7 +103,16 @@ In a filesystem tree:
 * It can be used to copy a single file, multiple files, or entire directories: `cp -r source/* destination/` in which `-r` means recursively copy (or move) directories and their contents.
 
 `mkdir`: is used to create new directories (also known as folders) within the file system. E.g., `mkdir directory_name`. Please note that this directory used relative path. We can use absolute path as well: `mkdir /users/Abed/new_direcotry`<br><br>
-`rmdir`: is used to remove (delete) **_empty_** directories from the file system. It stands for "remove directory." Unlike the `rm` command, which is used to remove files and directories, `rmdir` is specifically designed to remove only directories that are empty. E.g., `rmdir empty_direcotry`. To remove a directory and all of its contents, we can use `rm -r directory_name`
+`rmdir`: is used to remove (delete) **_empty_** directories from the file system. It stands for "remove directory." Unlike the `rm` command, which is used to remove files and directories, `rmdir` is specifically designed to remove only directories that are empty. E.g., `rmdir empty_direcotry`. To remove a directory and all of its contents, we can use `rm -r directory_name`<br><br>
+
+`touch`: is used to create a new file with a specified name or update the access and modification timestamps of an existing file without altering the file's content.
+```
+# Creating one or multiple of file(s)
+touch file1.txt file2.txt file3.txt
+
+# Updating timestamps
+touch existing_file.txt
+```
 
 ### 2. Text Editing and Viewing
 `cat`: is used to concatenate and display the contents of files. Its primary function is to read one or more files and display their contents in the terminal. For example: `cat file1.txt file2.txt`<br><br>
